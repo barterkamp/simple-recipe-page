@@ -240,12 +240,15 @@ body {
 /* List items */
 
 .preparation-time__list-item,
-.ingredients__list-item {
+.ingredients__list-item,
+.instructions__list-item {
     padding-left: var(--spacing-200);
 }
 
 .instructions__list-item {
-    padding-left: var(--spacing-300);
+    @media (min-width: 550px) {
+        padding-left: var(--spacing-300);
+    }
 }
 
 .preparation-time__list-item::marker,
