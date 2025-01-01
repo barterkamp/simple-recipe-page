@@ -1,0 +1,285 @@
+/* fonts */
+
+@font-face {
+    font-family: "Outfit-Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("./assets/fonts/Outfit-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outfit-SemiBold";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("./assets/fonts/Outfit-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outfit-Bold";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("./assets/fonts/Outfit-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "YoungSerif-Regular";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("./assets/fonts/YoungSerif-Regular.ttf") format("truetype");
+}
+
+/* variables */
+
+:root {
+    /* colors */
+    --color-rose-50: #fff7fb;
+    --color-rose-800: #7a284e;
+    --color-stone-100: #f3e5d7;
+    --color-stone-150: #e3ddd7;
+    --color-stone-600: #5f564d;
+    --color-stone-900: #312e2c;
+    --color-brown-800: #854632;
+    --color-white: #ffffff;
+
+    /* spacings */
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-500: 40px;
+    --spacing-600: 48px;
+    --spacing-1600: 128px;
+
+    /* font-sizes */
+    --heading-font-size-large: 4rem;
+    --heading-font-size-large-mobile: 3.6rem;
+    --heading-font-size-medium: 2.8rem;
+    --heading-font-size-small: 2rem;
+    --paragraph-font-size: 1.6rem;
+
+    /* line-height */
+    --heading-line-height: 1;
+
+    /* border-radius */
+    --border-radius-small: 12px;
+    --border-radius-large: 24px;
+
+    /* fallback fonts */
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
+        Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro,
+        serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+body {
+    font-family: "Outfit-Regular", var(--font-sans-serif);
+    font-size: var(--paragraph-font-size);
+    background: var(--color-white);
+    color: var(--color-stone-600);
+
+    @media (min-width: 550px) {
+        background: var(--color-stone-100);
+    }
+}
+
+.recipe {
+    background: var(--color-white);
+
+    @media (min-width: 550px) {
+        max-width: 616px;
+        padding: var(--spacing-500);
+        border-radius: var(--border-radius-large);
+        margin: var(--spacing-1600) auto;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 736px;
+    }
+}
+
+.recipe__figure {
+    display: block;
+    height: 172px;
+    overflow: hidden;
+
+    @media (min-width: 550px) {
+        height: auto;
+        margin-bottom: var(--spacing-500);
+    }
+}
+
+.recipe__image {
+    @media (min-width: 550px) {
+        border-radius: var(--border-radius-small);
+    }
+}
+
+.recipe__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+    padding: var(--spacing-500) var(--spacing-400);
+
+    @media (min-width: 550px) {
+        padding: 0;
+    }
+}
+
+.recipe__heading {
+    font-family: "Young Serif", var(--font-serif);
+    font-size: var(--heading-font-size-large-mobile);
+    color: var(--color-stone-900);
+    line-height: var(--heading-line-height);
+    margin-bottom: var(--spacing-300);
+
+    @media (min-width: 550px) {
+        font-size: var(--heading-font-size-large);
+    }
+}
+
+.seperator {
+    height: 1px;
+    background: var(--color-stone-150);
+}
+
+/* preparation time */
+
+.preparation-time {
+    padding: var(--spacing-300);
+    border-radius: var(--border-radius-small);
+    background: var(--color-rose-50);
+    margin-bottom: var(--spacing-200);
+}
+
+/* headings */
+
+.preparation-time__heading {
+    margin-bottom: var(--spacing-200);
+    font-family: "Outfit-SemiBold";
+    font-size: var(--heading-font-size-small);
+    color: var(--color-rose-800);
+}
+
+.ingredients__heading,
+.instructions__heading,
+.nutrition__heading {
+    font-family: "Young Serif", var(--font-serif);
+    font-size: var(--heading-font-size-medium);
+    color: var(--color-brown-800);
+    margin-bottom: var(--spacing-300);
+    line-height: var(--heading-line-height);
+}
+
+/* Lists */
+
+.preparation-time__list,
+.ingredients__list,
+.instructions__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
+
+.preparation-time__list {
+    padding-left: var(--spacing-300);
+}
+
+.ingredients__list,
+.instructions__list {
+    padding-left: var(--spacing-200);
+}
+
+/* List items */
+
+.preparation-time__list-item,
+.ingredients__list-item {
+    padding-left: var(--spacing-200);
+}
+
+.instructions__list-item {
+    padding-left: var(--spacing-300);
+}
+
+.preparation-time__list-item::marker,
+.ingredients__list-item::marker,
+.instructions__list-item::marker {
+    color: var(--color-rose-800);
+    font-size: 1.4rem;
+}
+
+.instructions__list-item::marker {
+    font-family: "Outfit-Bold";
+}
+
+/* nutrition */
+
+.nutrition__paragraph {
+    margin-bottom: var(--spacing-300);
+}
+
+.nutrition__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition__row:not(:last-child) {
+    border-bottom: 1px solid #f3e5d7;
+}
+
+.nutrition__data-title,
+.nutrition__data-value {
+    padding: var(--spacing-150) var(--spacing-400);
+}
+
+.nutrition__data-value {
+    font-family: "Outfit-Bold";
+    color: var(--color-brown-800);
+}
